@@ -1,0 +1,32 @@
+<% layout('/layouts/boilerplate') %>
+
+<body>
+    <h1>Welcome, Admin</h1>
+
+    <h2>Notifications</h2>
+    <ul>
+        <% currAdmin.notifications.forEach((notification, index) => { %>
+            <li>
+                <%= notification %>
+                <form action="/admin/notifications/<%= index %>/clear" method="POST" style="display:inline;">
+                    <button type="submit">Clear</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+
+    <h2>Pending Admin Requests</h2>
+    <ul>
+        <% pendingRequests.forEach(request => { %>
+            <li>
+                <%= request.username %> (<%= request.email %>)
+                <form action="/admin/approve/<%= request._id %>" method="POST" style="display:inline;">
+                    <button type="submit">Approve</button>
+                </form>
+                <form action="/admin/reject/<%= request._id %>" method="POST" style="display:inline;">
+                    <button type="submit">Reject</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>

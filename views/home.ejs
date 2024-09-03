@@ -1,0 +1,108 @@
+<% layout('/layouts/boilerplate') %>
+
+    <body>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="image1.png" alt="Slide 1">
+                <img src="image2.png" alt="Slide 2">
+                <img src="image3.png" alt="Slide 3">
+                <img src="image4.jpg" alt="Slide 4">
+                <img src="image5.png" alt="Slide 5">
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+                <span class="indicator" onclick="currentSlide(4)"></span>
+                <span class="indicator" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+
+
+        <div id="about-us" class="leaders-container">
+            <div class="leader">
+                <img src="shriVinai.jpg" alt="Lieutenant Governor">
+                <div class="leader-info">
+                    <h3>Shri Vinai Kumar Saxena</h3>
+                    <p>Lieutenant Governor</p>
+                </div>
+            </div>
+            <div class="leader">
+                <img src="shriarvind.jpg" alt="Chief Minister">
+                <div class="leader-info">
+                    <h3>Shri Arvind Kejriwal</h3>
+                    <p>Chief Minister</p>
+                </div>
+            </div>
+            <div class="leader">
+                <img src="shrikailash.jpg" alt="Minister">
+                <div class="leader-info">
+                    <h3>Shri Kailash Gahlot</h3>
+                    <p>Minister</p>
+                </div>
+            </div>
+        </div>
+        <div class="leaders-container">
+            <div class="welcome-section">
+                <div class="welcome-text">
+                    <h2>Welcome to Department of Delhi Transport Corporation</h2>
+                    <p>Government of India, Ministry of Transport took over the local bus services of Delhi in May 1948
+                        in
+                        the name of Delhi Transport Service when they found that the services offered by Gwalior and
+                        Northern India Transport Company Ltd., the then licensee, were inadequate. A Delhi Road
+                        Transport
+                        Authority was constituted under the Road Transport Corporation Act, 1950. This Authority became
+                        an
+                        undertaking of Municipal Corporation of Delhi by an Act of Parliament in April 1958. On the
+                        recommendation of a Working Group of Planning Commission which concluded that Delhi Transport as
+                        an
+                        extension of Municipal Corporation of Delhi had not been functioning efficiently and adequately
+                        resulting in leakage of revenue and very high operation cost, Govt. of India took over the
+                        management of the undertaking by passing the Delhi Road Transport Laws (Amendment) Act, in 1971.
+                        It
+                        took over the assets and liabilities from the erstwhile Delhi Transport Undertaking (DTU)
+                        operated
+                        by the Municipal Corporation of Delhi till 2nd Nov, 1971. Thus the DTC was set up in 1971. DTC
+                        which
+                        was functioning under the administrative control of Govt. of India, was finally taken over by
+                        Govt.
+                        of NCT, Delhi on 05.08.1996.</p>
+                </div>
+                <div class="welcome-image">
+                    <img src="welcome.png" alt="Delhi Transport Corporation Image">
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.querySelectorAll('.carousel-slide img');
+            const indicators = document.querySelectorAll('.indicator');
+
+            slides.forEach((slide, index) => {
+                slide.style.transform = `translateX(-${slideIndex * 100}%)`;
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.classList.remove('active');
+            });
+
+            indicators[slideIndex].classList.add('active');
+
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            setTimeout(showSlides, 5000); // Change slide every 2 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
+    

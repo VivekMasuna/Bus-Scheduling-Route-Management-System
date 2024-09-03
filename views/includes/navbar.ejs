@@ -1,0 +1,75 @@
+<header>
+    <div class="top-bar">
+        <div class="white-band">
+            <div class="logo-section">
+                <img src="/dtc_logo_2.png" alt="Delhi Transport Corporation Logo" class="logo">
+                <div class="title">
+                    <h1>Delhi Transport Corporation</h1>
+                    <p>Government of NCT of Delhi</p>
+                </div>
+            </div>
+            <div class="flag-section">
+                <img src="/india-flag-1.jpg" alt="Indian Flag" class="flag">
+                <img src="/amrit-mahotsav.jpg" alt="Azadi Ka Amrit Mahotsav" class="flag">
+                <img src="/india-emblem.jpg" alt="Ashoka Emblem" class="flag">
+            </div>
+        </div>
+    </div>
+    <nav>
+        <button class="toggle-button" onclick="toggleMenu()">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+            <% if(currAdmin) { %>
+                <li><a href="/admin/dashboard">Dashboard</a></li>
+            <% } %>
+            <% if(currAdmin) { %>
+                <li><a href="/admin/schedule">Schedule a Bus</a></li>
+            <% } %>
+        </ul>
+        <div class="login-search">
+            <div class="dropdown">
+                <button class="login-btn">Login</button>
+                <div class="dropdown-content">
+                    <a href="/admin/login">Admin</a>
+                    <a href="/crew/login">Crew</a>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button><img src="/search-icon.jpeg" alt="Search"></button>
+            </div>
+        </div>
+    </nav>
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <button class="close-menu" onclick="toggleMenu()">&times;</button>
+            <a href="index.html">Home</a>
+            <a href="#about-us">About Us</a>
+            <a href="#contact-us">Contact Us</a>
+            <a href="/admin/schedule">Schedule a Bus</a>
+            <div class="overlay-login-search">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <button><img src="/search-icon.jpeg" alt="Search"></button>
+                </div>
+                <div class="dropdown">
+                    <button class="login-btn">Login</button>
+                    <div class="dropdown-content">
+                        <a href="/admin/login">Admin</a>
+                        <a href="/crew/login">Crew</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    function toggleMenu() {
+        const overlay = document.getElementById('menu-overlay');
+        const isOpen = overlay.style.display === 'block';
+        overlay.style.display = isOpen ? 'none' : 'block';
+    }
+</script>
