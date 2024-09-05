@@ -1,3 +1,10 @@
+<style>
+    .login-btn a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
 <header>
     <div class="top-bar">
         <div class="white-band">
@@ -29,13 +36,19 @@
             <% } %>
         </ul>
         <div class="login-search">
-            <div class="dropdown">
-                <button class="login-btn">Login</button>
-                <div class="dropdown-content">
-                    <a href="/admin/login">Admin</a>
-                    <a href="/crew/login">Crew</a>
+            <% if(!currCrew && !currAdmin) { %>
+                <div class="dropdown">
+                    <button class="login-btn">Login</button>
+                    <div class="dropdown-content">
+                        <a href="/admin/login">Admin</a>
+                        <a href="/crew/login">Crew</a>
+                    </div>
                 </div>
-            </div>
+            <% } else { %>
+                <div class="dropdown">
+                    <button class="login-btn"><a href="/crew/logout">Logout</a></button>
+                </div>
+            <% } %>
             <div class="search-bar">
                 <input type="text" placeholder="Search">
                 <button><img src="/search-icon.jpeg" alt="Search"></button>
