@@ -122,5 +122,6 @@ app.use('/crew', crewRouter);
 app.use('/', forgotRouter);
 
 app.listen(port, () => {
-    console.log(`app is listening on port ${port}`);
+    console.log(`Server running at http://localhost:${port}`);
+
 });

@@ -17,18 +17,17 @@ async function main() {
 
 async function update_(){
     record = await routes_.find();
-
+    let j=0;
     for(re of record){
         for(let i=0;i<re.route_stops.length;i++){
-            console.log(re.route_stops[i].place)
             coord = await locationFinder(re.route_stops[i].place);
             re.route_stops[i].lat = coord.lat;
             re.route_stops[i].lon = coord.lon;
 
             
         }
-        console.log(1);
         await re.save();
+        console.log(j);j++;
     }
 }
 
