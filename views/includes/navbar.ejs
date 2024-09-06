@@ -30,9 +30,8 @@
             <li><a href="#contact-us">Contact Us</a></li>
             <% if(currAdmin) { %>
                 <li><a href="/admin/dashboard">Dashboard</a></li>
-            <% } %>
-            <% if(currAdmin) { %>
-                <li><a href="/admin/schedule">Schedule a Bus</a></li>
+                <li><a href="/admin/routes">Schedule a Bus</a></li>
+                <li><a href="/admin/activeBusses">Active Busses</a></li>
             <% } %>
         </ul>
         <div class="login-search">
@@ -58,10 +57,14 @@
     <div id="menu-overlay" class="menu-overlay">
         <div class="menu-overlay-content">
             <button class="close-menu" onclick="toggleMenu()">&times;</button>
-            <a href="index.html">Home</a>
+            <a href="/">Home</a>
             <a href="#about-us">About Us</a>
             <a href="#contact-us">Contact Us</a>
-            <a href="/admin/schedule">Schedule a Bus</a>
+            <% if(currAdmin) { %>
+                <a href="/admin/dashboard">Dashboard</a>
+                <a href="/admin/routes">Schedule a Bus</a>
+                <a href="/admin/activeBusses">Active Busses</a>
+            <% } %>
             <div class="overlay-login-search">
                 <div class="search-bar">
                     <input type="text" placeholder="Search">

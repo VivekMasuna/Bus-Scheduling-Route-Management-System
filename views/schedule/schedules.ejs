@@ -1,0 +1,35 @@
+<% layout('/layouts/boilerplate') %>
+
+<body>
+    <h1>Scheduled Buses and Crews</h1>
+    <% if (schedules.length > 0) { %>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Route No</th>
+                    <th>Bus No</th>
+                    <th>Driver</th>
+                    <th>Conductor</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% schedules.forEach(schedule => { %>
+                    <tr>
+                        <td><%= schedule.route.route_no %></td>
+                        <td><%= schedule.bus.bus_no %></td>
+                        <td><%= schedule.driver.name %></td>
+                        <td><%= schedule.conductor.name %></td>
+                        <td><%= schedule.schedule_time.start_time.toLocaleString() %></td>
+                        <td><%= schedule.schedule_time.end_time.toLocaleString() %></td>
+                        <td><%= schedule.status %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No schedules found.</p>
+    <% } %>
+</body>

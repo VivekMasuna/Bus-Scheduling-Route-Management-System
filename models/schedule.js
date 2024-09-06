@@ -15,4 +15,4 @@ const ScheduleSchema = new Schema({
     updated_at: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Route', ScheduleSchema);
+module.exports = mongoose.model('Schedule', ScheduleSchema);
