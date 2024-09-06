@@ -1,5 +1,46 @@
 <% layout('/layouts/boilerplate') %>
 
+<style>
+    form {
+        display: inline;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    button[type="submit"] {
+        background-color: #007BFF;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    button[type="submit"].reject {
+        background-color: #DC3545;
+    }
+
+    button[type="submit"].reject:hover {
+        background-color: #C82333;
+    }
+
+    li form button.reject {
+        background-color: #dc3545;
+    }
+
+    li form button.reject:hover {
+        background-color: #c82333;
+    }
+</style>
+
 <body>
     <h1>Welcome, Admin</h1>
 

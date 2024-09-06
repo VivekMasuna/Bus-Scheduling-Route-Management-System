@@ -3,6 +3,7 @@ const router = express.Router();
 const crypto = require('crypto');
 const Crew = require("../models/crew.js");
 const wrapAsync = require('../utils/wrapAsync.js');
+const nodemailer = require('nodemailer');
 
 router.get('/forgot', (req, res) => {
     res.render('crew/forgot.ejs');
@@ -38,9 +39,28 @@ router.post('/forgot', wrapAsync(async (req, res) => {
             If you did not request this, please ignore this email and your password will remain unchanged.`,
         };
 
-        await smtpTransport.sendMail(mailOptions);
-        req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
-        res.redirect('/forgot');
+        const MAX_RETRIES = 10;
+        let attempt = 0;
+        let emailSent = false;
+
+        while (!emailSent && attempt < MAX_RETRIES) {
+            try {
+                await smtpTransport.sendMail(mailOptions);
+                emailSent = true; // Email sent successfully
+                req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+                res.redirect('/forgot');
+            } catch (error) {
+                attempt++;
+                console.log(`Attempt ${attempt} failed:`, error.message);
+
+                if (attempt >= MAX_RETRIES) {
+                    console.log('Max retries reached. Failed to send email.');
+                    req.flash('error', 'Failed to send email after multiple attempts. Please try again later.');
+                    res.redirect('/forgot');
+                    return;
+                }
+            }
+        }
     } catch (err) {
         req.flash('error', 'Something went wrong. Please try again.');
         console.log(err);

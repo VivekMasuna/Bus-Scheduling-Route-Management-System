@@ -12,20 +12,30 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', wrapAsync(async (req, res, next) => {
     try {
-        let { username, email, password } = req.body;
-        let newCrew = new Crew({email, username});
-        let registeredCrew = await User.register(newCrew, password);
-        console.log(registeredCrew);
+        const { name, mobile, email, address, role, depotLocation, username, password } = req.body;
+        
+        const newCrew = new Crew({
+            name,
+            mobile,
+            email,
+            address,
+            role,
+            depot_location: depotLocation,
+            username
+        });
+
+        const registeredCrew = await Crew.register(newCrew, password);
+        
         req.login(registeredCrew, (err) => {
-            if(err) {
-                next(err);
-            }
+            if (err) return next(err);
+
             req.flash("success", "Welcome to DTC!");
             res.redirect("/");
         });
     } catch (e) {
+        console.log(e);
         req.flash("error", e.message);
-        res.redirect("/signup");
+        res.redirect("/crew/signup");
     }
 }));
 
@@ -40,14 +50,14 @@ router.post('/login', saveRedirectUrl, wrapAsync(async (req, res, next) => {
         }
         if (!user) {
             req.flash('error', 'Invalid username or password.');
-            return res.redirect('/login');
+            return res.redirect('/crew/login');
         }
         req.logIn(user, (err) => {
             if (err) {
                 return next(err);
             }
             req.crew = user;
-            req.flash("success", "Welcome to Yoga.Fitnesse!");
+            req.flash("success", "Welcome to DTC");
             let redirectUrl = res.locals.redirectUrl || "/";
             res.redirect(redirectUrl);
         });

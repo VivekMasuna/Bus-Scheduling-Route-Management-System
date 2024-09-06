@@ -95,8 +95,12 @@ passport.deserializeUser(async (id, done) => {
 });
 
 app.use((req, res, next) => {
-    if (req.isAuthenticated() && req.user instanceof Admin) {
-        req.admin = req.user;
+    if (req.isAuthenticated()) {
+        if (req.user instanceof Admin) {
+            req.admin = req.user;
+        } else if (req.user instanceof Crew) {
+            req.crew = req.user;
+        }
     }
     next();
 });
