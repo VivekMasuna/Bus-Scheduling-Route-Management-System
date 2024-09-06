@@ -22,7 +22,7 @@ const adminRouter = require('./routes/admin.js');
 const crewRouter = require('./routes/crew.js');
 const forgotRouter = require('./routes/forgot.js');
 
-const MONGO_URL = 'mongodb://127.0.0.1:27017/DTC';
+const MONGO_URL = "mongodb://localhost:27017/bus-management-system";
 
 main()
     .then((res) => {
