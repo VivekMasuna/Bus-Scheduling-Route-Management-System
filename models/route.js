@@ -5,7 +5,11 @@ const RouteSchema = new Schema({
     route_no: { type: String, unique: true, required: true },
     origin: { type: String, required: true },
     destination: { type: String, required: true },
-    route_stops: [String],
+    route_stops: [{
+        place: { type: String, required: true },
+        lat: { type: Number },
+        lon: { type: Number }
+    }],
     distance: { type: Number, required: true },
     schedule: [{
         start_time: { type: String, required: true },
@@ -14,4 +18,4 @@ const RouteSchema = new Schema({
     is_active: { type: Boolean, default: true },
 }, { timestamps: true });
 
-module.exports = mongoose.model('Route', RouteSchema);
+module.exports = mongoose.model('Route', RouteSchema,'routes');

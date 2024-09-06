@@ -23,17 +23,11 @@
 
 	<script>
 
-/**		var map = L.map('map').setView([28.2380, 83.9956], 11);
+		var map = L.map('map').setView([28.2380, 83.9956], 11);
 		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
 
-		var taxiIcon = L.icon({
-			iconUrl: 'taxi.png',
-			iconSize: [70, 70]
-		});
-        var prev = [28.2380, 83.9956];
 
-		var marker = L.marker([28.2380, 83.9956], { icon: taxiIcon }).addTo(map);
         var asd = new Array();
 
         for(let i=0;i<34;i++){
@@ -41,11 +35,18 @@
 
             asd.push(L.latLng(lan,lng));
         }
+
+		const customDivIcon = L.divIcon({
+			className: 'custom-icon',
+			html: '<div style="background-color: red; width: 30px; height: 30px; border-radius: 50%; border: 2px solid white;"></div>',
+			iconSize: [30, 30]
+		  });
+		  L.marker([28.2380, 83.9956], { icon: customDivIcon }).addTo(map)
 		map.on('click', function (e) {
 			console.log(e)
 			var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
 			L.Routing.control({
-				waypoints: asd
+				waypoints: [prev,[e.latlng.lat, e.latlng.lng]]
 			}).on('routesfound', function (e) {
 				var routes = e.routes;
 				console.log(routes);
@@ -54,12 +55,11 @@
 		
             prev = [e.latlng.lat, e.latlng.lng]
         });
-*/
-
+/**
 		var map = L.map('map').setView([28.6517178, 77.2219388], 11);
 		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
-
+*/
 		
 
 		

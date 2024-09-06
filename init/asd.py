@@ -1,4 +1,4 @@
-const routes= [
+routes= [
     {
         route_no: '102ADown',
         origin: 'Rohini Sec 22 Terminal',
@@ -436,4 +436,4 @@ for(let i=0;i<asd.length;i++ ){
     for(let j=0;j<asd[i].route_stops.length;j++ ) asd[i].route_stops[j] = {place:asd[i].route_stops[j],lat:0,lon:0};
 }
 
-module.exports = asd;
+console.log(asd);
