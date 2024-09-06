@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     <style>
+        <% layout('/layouts/boilerplate') %>
         body {
             margin: 0;
             padding: 0;
@@ -37,7 +38,7 @@
 			if(i==0){
 				iconColor = 'red';
 				var divIcon = `<div style="background-color: ${iconColor}; width: 30px; height: 30px; border-radius: 50%; border: 2px solid white;"></div>`;
-				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [30, 30] }) })
+				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [30, 30] }) },{draggable:false})
                 .bindPopup(`<b>Stop  ${i+1}: ${coord[i].place}</b><br>Latitude: ${coord[i].lat}<br>Longitude: ${coord[i].lon}`)
                 .addTo(map);
 			}
@@ -45,13 +46,13 @@
 			else if(i==coord.length-1){
 				iconColor = 'green';
 				var divIcon = `<div style="background-color: ${iconColor}; width: 30px; height: 30px; border-radius: 50%; border: 2px solid white;"></div>`;
-				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [30, 30] }) })
+				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [30, 30] }) },{draggable:false})
                 .bindPopup(`<b>Stop ${i+1}: ${coord[i].place}</b><br>Latitude: ${coord[i].lat}<br>Longitude: ${coord[i].lon}`)
                 .addTo(map);
 			}
 
 			else{
-				L.marker([coord[i].lat, coord[i].lon])
+				L.marker([coord[i].lat, coord[i].lon],{draggable:false})
                 .bindPopup(`<b>Stop ${i+1}: ${coord[i].place}</b><br>Latitude: ${coord[i].lat}<br>Longitude: ${coord[i].lon}`)
                 .addTo(map);
 			}

@@ -196,8 +196,14 @@ router.post('/reject/:id', isSuperAdmin, wrapAsync(async (req, res) => {
 router.get('/map/:route_name', wrapAsync(async (req, res) =>{
 
     const route_data = await route.find({route_no:req.params.route_name});
-    const coord = route_data[0].route_stops;
-    res.render('admin/mapLet.ejs', { coord });
+    if(route_data.length>0){
+        const coord = route_data[0].route_stops;
+        res.render('admin/mapLet.ejs', { coord });
+    }
+    else{
+        req.flash('error', 'Something went wrong. Please try again.');
+
+    }
     
 }));
 
