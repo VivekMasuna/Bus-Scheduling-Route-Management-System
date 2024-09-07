@@ -1,8 +1,51 @@
 <% layout('/layouts/boilerplate') %>
+<style>
+    #wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+    #head {
+        color: #ddd;
+        border: 2px solid #002244;
+        background-color: #002244;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
 
+    th {
+        background-color: #003366;
+        color: white;
+    }
+    @media (max-width: 768px) {
+
+        th,
+        td {
+            font-size: 14px;
+            padding: 8px;
+        }
+    }
+
+</style>
 <body>
-    <h1>Scheduled Buses and Crews</h1>
+    <div id="wrapper">
+        <h1 id="head">Scheduled Buses and Crews</h1>
     <% if (schedules.length > 0) { %>
+        <center>
         <table border="1">
             <thead>
                 <tr>
@@ -29,7 +72,9 @@
                 <% }); %>
             </tbody>
         </table>
+        </center>
     <% } else { %>
         <p>No schedules found.</p>
     <% } %>
+</div>
 </body>

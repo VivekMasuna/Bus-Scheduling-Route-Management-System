@@ -56,6 +56,6 @@ async function insertCrews() {
     }
 }
 
-// insertRoutes();
-// insertBuses();
+insertRoutes();
+insertBuses();
 insertCrews();
