@@ -21,8 +21,9 @@ const LocalStrategy = require('passport-local');
 const adminRouter = require('./routes/admin.js');
 const crewRouter = require('./routes/crew.js');
 const forgotRouter = require('./routes/forgot.js');
+const ScheduleRouter = require('./routes/schedule.js');
 
-const MONGO_URL = "mongodb://localhost:27017/bus-management-system";
+const MONGO_URL = "mongodb://127.0.0.1:27017/DTC";
 
 main()
     .then((res) => {
@@ -119,6 +120,7 @@ app.get("/", (req, res) => {
 
 app.use('/admin', adminRouter);
 app.use('/crew', crewRouter);
+app.use('/admin', ScheduleRouter);
 app.use('/', forgotRouter);
 
 app.listen(port, () => {

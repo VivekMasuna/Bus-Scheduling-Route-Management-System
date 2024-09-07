@@ -1,0 +1,136 @@
+<% layout('/layouts/boilerplate') %>
+
+    <style>
+        .manage {
+            width: 70%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #003366;
+            color: white;
+        }
+
+        .route {
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+
+        .route:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn {
+            background-color: #FFCC00;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #e6b800;
+        }
+
+        @media (max-width: 768px) {
+
+            th,
+            td {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        h2 {
+            color: #ddd;
+            border: 2px solid #002244;
+            background-color: #002244;
+            border-radius: 10px;
+            margin: 30px 100px 30px 100px;
+            width: 40%;
+        }
+
+        .button1 {
+            height: 40px;
+            background-color: #FFCC00;
+            border: #FFCC00;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            color: black;
+            text-decoration: none;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+            margin: 0px 20px 20px 20px;
+        }
+
+        .button1:hover {
+            background-color: #e6b800;
+        }
+
+        .button1 a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
+    <body>
+        <center>
+            <h2>Select a Route to Schedule</h2>
+        </center>
+        <center>
+            <table class="manage">
+                <thead>
+                    <tr>
+                        <th>Route No</th>
+                        <th>Origin</th>
+                        <th>Destination</th>
+                        <th>Stops</th>
+                        <th>Maps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% routes.forEach(route => { %>
+                        <tr class="route" onclick="window.location.href='/admin/routes/timing/<%= route._id %>'">
+                            <td><%= route.route_no %></td>
+                            <td><%= route.origin %></td>
+                            <td><%= route.destination %></td>
+                            <td>
+                                <a href="#" class="btn" onclick="event.stopPropagation();">
+                                    View
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="btn" onclick="event.stopPropagation();">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </center>
+        <center>
+            <div class="buttons">
+                <button class="button1"><a href="/admin/routes/new">Add new Route</a></button>
+                <button class="button1"><a href="/">Delete a Route</a></button>
+            </div>
+        </center>
+    </body>
+    
