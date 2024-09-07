@@ -3,6 +3,7 @@ const router = express.Router();
 const Admin = require("../models/admin.js");
 const AdminRequest = require('../models/adminRequest.js');
 const passport = require('passport');
+const route = require('../models/route.js');
 const { isSuperAdmin } = require('../middleware.js');
 const { transporter } = require('../functions.js');
 const wrapAsync = require('../utils/wrapAsync.js');
@@ -190,6 +191,20 @@ router.post('/reject/:id', isSuperAdmin, wrapAsync(async (req, res) => {
         req.flash('error', 'Something went wrong. Please try again.');
         res.redirect('/admin/dashboard');
     }
+}));
+
+router.get('/map/:route_name', wrapAsync(async (req, res) =>{
+
+    const route_data = await route.find({route_no:req.params.route_name});
+    if(route_data.length>0){
+        const coord = route_data[0].route_stops;
+        res.render('admin/mapLet.ejs', { coord });
+    }
+    else{
+        req.flash('error', 'Something went wrong. Please try again.');
+
+    }
+    
 }));
 
 module.exports = router;

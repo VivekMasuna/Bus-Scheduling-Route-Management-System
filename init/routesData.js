@@ -1,4 +1,4 @@
-const routes = [
+const routes= [
     {
         route_no: '102ADown',
         origin: 'Rohini Sec 22 Terminal',
@@ -429,4 +429,19 @@ const routes = [
     }
 ];
 
-module.exports = routes;
+const data = require('./route.json');
+var asd= routes;
+
+async function load_json(asd){
+
+    for(let i=0;i<asd.length;i++ ){
+        for(let j=0;j<asd[i].route_stops.length;j++ ){
+            asd[i].route_stops[j] = {place:asd[i].route_stops[j],lat:data[asd[i].route_stops[j]].lat,lon:data[asd[i].route_stops[j]].long};
+        } 
+    }
+}
+
+load_json(asd);
+
+
+module.exports = asd;
