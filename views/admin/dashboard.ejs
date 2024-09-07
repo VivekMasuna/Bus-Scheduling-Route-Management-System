@@ -1,73 +1,87 @@
 <% layout('/layouts/boilerplate') %>
 
-<style>
-    form {
-        display: inline;
-    }
+    <style>
+        form {
+            display: inline;
+        }
 
-    button {
-        padding: 10px 15px;
-        font-size: 1rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-left: 10px;
-    }
+        button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
 
-    button[type="submit"] {
-        background-color: #007BFF;
-    }
+        button[type="submit"] {
+            background-color: #007BFF;
+        }
 
-    button[type="submit"]:hover {
-        background-color: #0056b3;
-    }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
 
-    button[type="submit"].reject {
-        background-color: #DC3545;
-    }
+        li form button.approve {
+            background-color: #4CAF50;
+        }
 
-    button[type="submit"].reject:hover {
-        background-color: #C82333;
-    }
+        li form button.approve:hover {
+            background-color: #3a933d;
+        }
 
-    li form button.reject {
-        background-color: #dc3545;
-    }
+        li form button.reject {
+            background-color: #dc3545;
+        }
 
-    li form button.reject:hover {
-        background-color: #c82333;
-    }
-</style>
+        li form button.reject:hover {
+            background-color: #c82333;
+        }
 
-<body>
-    <h1>Welcome, Admin</h1>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    <h2>Notifications</h2>
-    <ul>
-        <% currAdmin.notifications.forEach((notification, index) => { %>
-            <li>
-                <%= notification %>
-                <form action="/admin/notifications/<%= index %>/clear" method="POST" style="display:inline;">
-                    <button type="submit">Clear</button>
-                </form>
-            </li>
-        <% }) %>
-    </ul>
+        h2 {
+            margin-bottom: 0;
+        }
+    </style>
 
-    <h2>Pending Admin Requests</h2>
-    <ul>
-        <% pendingRequests.forEach(request => { %>
-            <li>
-                <%= request.username %> (<%= request.email %>)
-                <form action="/admin/approve/<%= request._id %>" method="POST" style="display:inline;">
-                    <button type="submit">Approve</button>
-                </form>
-                <form action="/admin/reject/<%= request._id %>" method="POST" style="display:inline;">
-                    <button type="submit">Reject</button>
-                </form>
-            </li>
-        <% }) %>
-    </ul>
-</body>
+    <body>
+        <div class="container">
+            <h1>Welcome, Admin</h1>
+
+            <h2>Notifications</h2>
+            <ul>
+                <% currAdmin.notifications.forEach((notification, index)=> { %>
+                    <li>
+                        <%= notification %>
+                            <form action="/admin/notifications/<%= index %>/clear" method="POST"
+                                style="display:inline;">
+                                <button type="submit">Clear</button>
+                            </form>
+                    </li>
+                    <% }) %>
+            </ul>
+
+            <h2>Pending Admin Requests</h2>
+            <ul>
+                <% pendingRequests.forEach(request=> { %>
+                    <li>
+                        <%= request.username %> (<%= request.email %>)
+                                <form action="/admin/approve/<%= request._id %>" method="POST" style="display:inline;">
+                                    <button type="submit" class="approve">Approve</button>
+                                </form>
+                                <form action="/admin/reject/<%= request._id %>" method="POST" style="display:inline;">
+                                    <button type="submit" class="reject">Reject</button>
+                                </form>
+                    </li>
+                    <% }) %>
+            </ul>
+        </div>
+    </body>

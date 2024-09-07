@@ -1,4 +1,4 @@
-const routes= [
+const routes = [
     {
         route_no: '102ADown',
         origin: 'Rohini Sec 22 Terminal',
@@ -53,8 +53,8 @@ const routes= [
             'Pal Colony', 'Rithala Village', 'Sec-24 Rohini Main Road',
             'Dera Satguru Sewaram Sahai Sec 24/25 Crossing', 'Rohini Sec 24 Dear Satguru Sewaram Crossing',
             'Hanuman Mandir Rohini Sec 24', 'Rohini Sec 23 Pocket 1 (Green Hill Aptt.)',
-            'Rohini Sec 23', 'Poothkalan More', 'Police Station Begumpur', 
-            'Rohini Sec 20/21/22 Crossing', 'Rohini Sec-21', 'Lakhhi Ram Park', 
+            'Rohini Sec 23', 'Poothkalan More', 'Police Station Begumpur',
+            'Rohini Sec 20/21/22 Crossing', 'Rohini Sec-21', 'Lakhhi Ram Park',
             'Rohini Sec 22 Terminal'
         ],
         distance: 14.1,
@@ -83,15 +83,15 @@ const routes= [
         origin: 'Alipur Village GT Road',
         destination: 'Old Delhi Railway Station',
         route_stops: [
-            'Alipur Village GT Road', 'Mcd Store', 'Jind Pur Crossing', 'Sai Mandir', 
-            'Budhpur GT Road', 'Jain Mandir', 'Nangli Poona (GT Road)', 'Gurudwara Siraspur GT Road', 
-            'Swaroop Nagar GT Road', 'Libas Pur GT Road', 'Sanjay Gandhi Transport Nagar', 'GTK Depot', 
-            'Jahangirpuri GT Road (Metro Station)', 'Mahindra Park', 'Sarai Pipal Thala', 
-            'Adarsh Nagar Metro Station', 'New Sabzi Mandi Azadpur', 'Azadpur Terminal', 
-            'Model Town III', 'Model Town II', 'Alpana Cinema (Model Town Mtr Stn)', 'New Police Line', 
-            'GTB Nagar', 'INS Hostel', 'Vishwa Vidyalaya Metro Station', 'Mall Road', 'Khyber Pass', 
-            'Vidhan Sabha Metro Station', 'Old Secretariat (Postal Account Office)', 
-            'IP College', 'Exchange Store / Civil Lines Metro Station', 'Ludlow Castle', 
+            'Alipur Village GT Road', 'Mcd Store', 'Jind Pur Crossing', 'Sai Mandir',
+            'Budhpur GT Road', 'Jain Mandir', 'Nangli Poona (GT Road)', 'Gurudwara Siraspur GT Road',
+            'Swaroop Nagar GT Road', 'Libas Pur GT Road', 'Sanjay Gandhi Transport Nagar', 'GTK Depot',
+            'Jahangirpuri GT Road (Metro Station)', 'Mahindra Park', 'Sarai Pipal Thala',
+            'Adarsh Nagar Metro Station', 'New Sabzi Mandi Azadpur', 'Azadpur Terminal',
+            'Model Town III', 'Model Town II', 'Alpana Cinema (Model Town Mtr Stn)', 'New Police Line',
+            'GTB Nagar', 'INS Hostel', 'Vishwa Vidyalaya Metro Station', 'Mall Road', 'Khyber Pass',
+            'Vidhan Sabha Metro Station', 'Old Secretariat (Postal Account Office)',
+            'IP College', 'Exchange Store / Civil Lines Metro Station', 'Ludlow Castle',
             'ISBT Nityanand Marg', 'Mori Gate Terminal', 'Novelty Cinema', 'Old Delhi Railway Station'
         ],
         distance: 17.2,
@@ -128,15 +128,15 @@ const routes= [
         destination: 'Alipur Village GT Road',
         route_stops: [
             'Old Delhi Railway Station', 'Novelty Cinema', 'Mori Gate Terminal', 'ISBT Nityanand Marg',
-            'Ludlow Castle', 'Exchange Store / Civil Lines Metro Station', 'IP College', 
-            'Old Secretariat (Postal Account Office)', 'Vidhan Sabha Metro Station', 'Khyber Pass', 
-            'Mall Road', 'Vishwa Vidyalaya Metro Station', 'INS Hostel', 'GTB Nagar', 'New Police Line', 
-            'Alpana Cinema (Model Town Mtr Stn)', 'Model Town II', 'Model Town III', 
-            'Azadpur Terminal', 'New Sabzi Mandi Azadpur', 'Adarsh Nagar Metro Station', 
-            'Sarai Pipal Thala', 'Mahindra Park', 'Jahangirpuri GT Road (Metro Station)', 
-            'GTK Depot', 'Sanjay Gandhi Transport Nagar', 'Libas Pur GT Road', 
-            'Swaroop Nagar GT Road', 'Gurudwara Siraspur GT Road', 'Nangli Poona (GT Road)', 
-            'Jain Mandir', 'Budhpur GT Road', 'Sai Mandir', 'Jind Pur Crossing', 'Mcd Store', 
+            'Ludlow Castle', 'Exchange Store / Civil Lines Metro Station', 'IP College',
+            'Old Secretariat (Postal Account Office)', 'Vidhan Sabha Metro Station', 'Khyber Pass',
+            'Mall Road', 'Vishwa Vidyalaya Metro Station', 'INS Hostel', 'GTB Nagar', 'New Police Line',
+            'Alpana Cinema (Model Town Mtr Stn)', 'Model Town II', 'Model Town III',
+            'Azadpur Terminal', 'New Sabzi Mandi Azadpur', 'Adarsh Nagar Metro Station',
+            'Sarai Pipal Thala', 'Mahindra Park', 'Jahangirpuri GT Road (Metro Station)',
+            'GTK Depot', 'Sanjay Gandhi Transport Nagar', 'Libas Pur GT Road',
+            'Swaroop Nagar GT Road', 'Gurudwara Siraspur GT Road', 'Nangli Poona (GT Road)',
+            'Jain Mandir', 'Budhpur GT Road', 'Sai Mandir', 'Jind Pur Crossing', 'Mcd Store',
             'Alipur Village GT Road'
         ],
         distance: 17.2,
@@ -172,15 +172,15 @@ const routes= [
         origin: 'Jharoda Metro Station',
         destination: 'Shivaji Stadium Terminal',
         route_stops: [
-            'Jharoda Metro Station', 'Wazirabad Village (Burari)', 'Burari Metro Station', 
-            'Nirankari Sarover- Burari Xing', 'CV Raman ITI', 'Nirankari Colony', 'Radio Colony', 
-            'Dhaka Village', 'Balmiki Gandhi Ashram', 'TB Hospital', 'GTB Nagar', 'INS Hostel', 
-            'Vishwa Vidyalaya Metro Station', 'Mall Road', 'Khyber Pass', 'Vidhan Sabha Metro Station', 
-            'Old Secretariat (Postal Account Office)', 'IP College', 'Exchange Store / Civil Lines Metro Station', 
-            'Ludlow Castle', 'ISBT Kashmere Gate Metro Station', 'Guru Govind Singh University (Kashmere Gate)', 
-            'GPO', 'Red Fort', 'Jama Masjid', 'Darya Ganj Golcha Cinema', 'Delhi Gate', 
-            'Express Building / Shaheed Park (Bhagat Singh Terminal)', 'ITO', 'Tilak Bridge', 
-            'Mandi House', 'Kasturba Gandhi Road Crossing', 'Max Muller Bhawan', 'Scindia House', 
+            'Jharoda Metro Station', 'Wazirabad Village (Burari)', 'Burari Metro Station',
+            'Nirankari Sarover- Burari Xing', 'CV Raman ITI', 'Nirankari Colony', 'Radio Colony',
+            'Dhaka Village', 'Balmiki Gandhi Ashram', 'TB Hospital', 'GTB Nagar', 'INS Hostel',
+            'Vishwa Vidyalaya Metro Station', 'Mall Road', 'Khyber Pass', 'Vidhan Sabha Metro Station',
+            'Old Secretariat (Postal Account Office)', 'IP College', 'Exchange Store / Civil Lines Metro Station',
+            'Ludlow Castle', 'ISBT Kashmere Gate Metro Station', 'Guru Govind Singh University (Kashmere Gate)',
+            'GPO', 'Red Fort', 'Jama Masjid', 'Darya Ganj Golcha Cinema', 'Delhi Gate',
+            'Express Building / Shaheed Park (Bhagat Singh Terminal)', 'ITO', 'Tilak Bridge',
+            'Mandi House', 'Kasturba Gandhi Road Crossing', 'Max Muller Bhawan', 'Scindia House',
             'Shivaji Stadium Terminal'
         ],
         distance: 15.8,
@@ -213,14 +213,14 @@ const routes= [
         origin: 'Shivaji Stadium Terminal',
         destination: 'Jharoda Metro Station',
         route_stops: [
-            'Shivaji Stadium Terminal', 'Express Building / Shaheed Park (Bhagat Singh Terminal)', 
-            'ITO', 'Delhi Gate', 'Darya Ganj Golcha Cinema', 'Jama Masjid', 'Red Fort', 'GPO', 
-            'Guru Govind Singh University (Kashmere Gate)', 'ISBT Kashmere Gate Metro Station', 
-            'Ludlow Castle', 'Exchange Store / Civil Lines Metro Station', 'IP College', 
-            'Old Secretariat (Postal Account Office)', 'Vidhan Sabha Metro Station', 'Khyber Pass', 
-            'Mall Road', 'Vishwa Vidyalaya Metro Station', 'INS Hostel', 'GTB Nagar', 'TB Hospital', 
-            'Balmiki Gandhi Ashram', 'Dhaka Village', 'Radio Colony', 'Nirankari Colony', 
-            'CV Raman ITI', 'Nirankari Sarover- Burari Xing', 'Burari Metro Station', 
+            'Shivaji Stadium Terminal', 'Express Building / Shaheed Park (Bhagat Singh Terminal)',
+            'ITO', 'Delhi Gate', 'Darya Ganj Golcha Cinema', 'Jama Masjid', 'Red Fort', 'GPO',
+            'Guru Govind Singh University (Kashmere Gate)', 'ISBT Kashmere Gate Metro Station',
+            'Ludlow Castle', 'Exchange Store / Civil Lines Metro Station', 'IP College',
+            'Old Secretariat (Postal Account Office)', 'Vidhan Sabha Metro Station', 'Khyber Pass',
+            'Mall Road', 'Vishwa Vidyalaya Metro Station', 'INS Hostel', 'GTB Nagar', 'TB Hospital',
+            'Balmiki Gandhi Ashram', 'Dhaka Village', 'Radio Colony', 'Nirankari Colony',
+            'CV Raman ITI', 'Nirankari Sarover- Burari Xing', 'Burari Metro Station',
             'Wazirabad Village (Burari)', 'Jharoda Metro Station'
         ],
         distance: 15.8,
@@ -253,11 +253,11 @@ const routes= [
         origin: 'Qutub Garh Village (T)',
         destination: 'Bawana Soap Factory',
         route_stops: [
-            'Qutub Garh Village (T)', 'Katewara Crossing', 'Jawahar Navodya School', 
-            'Mungeshpur Village', 'B.R. International School', 'Auchandi Border', 
-            'Auchandi Village', 'Auchandi Sarvodaya School', 'Harewali Crossing', 
-            'Dariyapur Gaon', 'Bajit Pur Crossing', 'Dariyapur Kalan School', 
-            'PS Bawana', 'Bawana Depot', 'Bawana', 'Bawana Dispensary', 
+            'Qutub Garh Village (T)', 'Katewara Crossing', 'Jawahar Navodya School',
+            'Mungeshpur Village', 'B.R. International School', 'Auchandi Border',
+            'Auchandi Village', 'Auchandi Sarvodaya School', 'Harewali Crossing',
+            'Dariyapur Gaon', 'Bajit Pur Crossing', 'Dariyapur Kalan School',
+            'PS Bawana', 'Bawana Depot', 'Bawana', 'Bawana Dispensary',
             'Bawana Soap Factory'
         ],
         distance: 13.1,
@@ -286,10 +286,10 @@ const routes= [
         origin: 'Bawana Soap Factory',
         destination: 'Qutub Garh Village (T)',
         route_stops: [
-            'Bawana Soap Factory', 'Bawana Dispensary', 'Bawana', 'Bawana Depot', 
-            'PS Bawana', 'Dariyapur Kalan School', 'Bajit Pur Crossing', 'Dariyapur Gaon', 
-            'Harewali Crossing', 'Auchandi Sarvodaya School', 'Auchandi Village', 
-            'Auchandi Border', 'B.R. International School', 'Mungeshpur Village', 
+            'Bawana Soap Factory', 'Bawana Dispensary', 'Bawana', 'Bawana Depot',
+            'PS Bawana', 'Dariyapur Kalan School', 'Bajit Pur Crossing', 'Dariyapur Gaon',
+            'Harewali Crossing', 'Auchandi Sarvodaya School', 'Auchandi Village',
+            'Auchandi Border', 'B.R. International School', 'Mungeshpur Village',
             'Jawahar Navodya School', 'Katewara Crossing', 'Qutub Garh Village (T)'
         ],
         distance: 13.1,
@@ -315,27 +315,27 @@ const routes= [
         origin: 'Katewara Village',
         destination: 'Old Delhi Railway Station',
         route_stops: [
-            'Katewara Village', 'Bajitpur Mandir', 'Bajitpur Village', 'Nangal Thakran', 
-            'Bajit Pur Crossing', 'Dariyapur Kalan School', 'PS Bawana', 'Bawana Depot', 
-            'Bawana', 'Bawana School', 'Aditi College Bawana', 'DSIDC Bawana/ Dhakewala', 
-            'DSIDC Office Bawana', 'Maharishi Valmiki Hospital', 'Poothkhurd Village', 
-            'Sultan Pur Crossing / Poothkhurd', 'Poothkhurd Firni Road', 'Barwala Village', 
-            'Barwala School', 'Rohini Sec 35', 'Jain Colony', 'Prehladpur School', 
-            'Prehladpur Village', 'Prehladpur Crossing', 'Rohini Sec 27 and 30 Crossing', 
-            'Shahbad Dairy', 'Shahbad Dairy A Block', 'St. Xavier School Shahbad', 
-            'Shahbad Daulatpur School', 'Shahbad Daulatpur Gaon', 'Delhi Engg College Shahbad', 
-            'Rohini Sec-16 Xing', 'Shri Krishna Apartments', 'Rohini DTC Depot 4', 
-            'Rohini Sec 18 B-7 Road', 'Rohini Sec 18 Pocket A', 'Rohini Sec 18', 
-            'Rohini Sec 18 B Block', 'Badli Village', 'Jail Road Rohini Sec 18', 
-            'Badli Crossing', 'Haiderpur Metro Station', 'Shaheed Captain Vikram Batra Flyover', 
-            'GTK Depot', 'Jahangirpuri GT Road (Metro Station)', 'Sarai Pipal Thala', 
-            'Adarsh Nagar Metro Station', 'New Sabzi Mandi Azadpur', 'Azadpur Terminal', 
-            'Model Town III', 'Model Town II', 'Alpana Cinema (Model Town Mtr Stn)', 
-            'New Police Line', 'GTB Nagar', 'INS Hostel', 'Vishwa Vidyalaya Metro Station', 
-            'Mall Road', 'Khyber Pass', 'Vidhan Sabha Metro Station', 
-            'Old Secretariat (Postal Account Office)', 'IP College', 'Exchange Store (Hill Road)', 
-            'PNB STA Road', 'Rajpur Road Transport Deptt', 'MCD Store (Rajpur Road)', 
-            'Aruna Asaf Ali Hospital', 'Tees Hazari Court', 'Mori Gate Terminal', 
+            'Katewara Village', 'Bajitpur Mandir', 'Bajitpur Village', 'Nangal Thakran',
+            'Bajit Pur Crossing', 'Dariyapur Kalan School', 'PS Bawana', 'Bawana Depot',
+            'Bawana', 'Bawana School', 'Aditi College Bawana', 'DSIDC Bawana/ Dhakewala',
+            'DSIDC Office Bawana', 'Maharishi Valmiki Hospital', 'Poothkhurd Village',
+            'Sultan Pur Crossing / Poothkhurd', 'Poothkhurd Firni Road', 'Barwala Village',
+            'Barwala School', 'Rohini Sec 35', 'Jain Colony', 'Prehladpur School',
+            'Prehladpur Village', 'Prehladpur Crossing', 'Rohini Sec 27 and 30 Crossing',
+            'Shahbad Dairy', 'Shahbad Dairy A Block', 'St. Xavier School Shahbad',
+            'Shahbad Daulatpur School', 'Shahbad Daulatpur Gaon', 'Delhi Engg College Shahbad',
+            'Rohini Sec-16 Xing', 'Shri Krishna Apartments', 'Rohini DTC Depot 4',
+            'Rohini Sec 18 B-7 Road', 'Rohini Sec 18 Pocket A', 'Rohini Sec 18',
+            'Rohini Sec 18 B Block', 'Badli Village', 'Jail Road Rohini Sec 18',
+            'Badli Crossing', 'Haiderpur Metro Station', 'Shaheed Captain Vikram Batra Flyover',
+            'GTK Depot', 'Jahangirpuri GT Road (Metro Station)', 'Sarai Pipal Thala',
+            'Adarsh Nagar Metro Station', 'New Sabzi Mandi Azadpur', 'Azadpur Terminal',
+            'Model Town III', 'Model Town II', 'Alpana Cinema (Model Town Mtr Stn)',
+            'New Police Line', 'GTB Nagar', 'INS Hostel', 'Vishwa Vidyalaya Metro Station',
+            'Mall Road', 'Khyber Pass', 'Vidhan Sabha Metro Station',
+            'Old Secretariat (Postal Account Office)', 'IP College', 'Exchange Store (Hill Road)',
+            'PNB STA Road', 'Rajpur Road Transport Deptt', 'MCD Store (Rajpur Road)',
+            'Aruna Asaf Ali Hospital', 'Tees Hazari Court', 'Mori Gate Terminal',
             'Novelty Cinema', 'Old Delhi Railway Station'
         ],
         distance: 44.7,
@@ -374,26 +374,26 @@ const routes= [
         origin: 'Old Delhi Railway Station',
         destination: 'Katewara Village',
         route_stops: [
-            'Old Delhi Railway Station', 'Novelty Cinema', 'Mori Gate Terminal', 
-            'Tees Hazari Court', 'Aruna Asaf Ali Hospital', 'MCD Store (Rajpur Road)', 
-            'Rajpur Road Transport Deptt', 'PNB STA Road', 'Exchange Store (Hill Road)', 
-            'IP College', 'Old Secretariat (Postal Account Office)', 'Vidhan Sabha Metro Station', 
-            'Khyber Pass', 'Mall Road', 'Vishwa Vidyalaya Metro Station', 'INS Hostel', 
-            'GTB Nagar', 'New Police Line', 'Alpana Cinema (Model Town Mtr Stn)', 
-            'Model Town II', 'Model Town III', 'Azadpur Terminal', 'New Sabzi Mandi Azadpur', 
-            'Adarsh Nagar Metro Station', 'Sarai Pipal Thala', 'Jahangirpuri GT Road (Metro Station)', 
-            'GTK Depot', 'Shaheed Captain Vikram Batra Flyover', 'Haiderpur Metro Station', 
-            'Badli Crossing', 'Jail Road Rohini Sec 18', 'Badli Village', 'Rohini Sec 18 B Block', 
-            'Rohini Sec 18', 'Rohini Sec 18 Pocket A', 'Rohini Sec 18 B-7 Road', 
-            'Rohini DTC Depot 4', 'Shri Krishna Apartments', 'Rohini Sec-16 Xing', 
-            'Delhi Engg College Shahbad', 'Shahbad Daulatpur Gaon', 'Shahbad Daulatpur School', 
-            'St. Xavier School Shahbad', 'Shahbad Dairy A Block', 'Shahbad Dairy', 
-            'Rohini Sec 27 and 30 Crossing', 'Prehladpur Crossing', 'Prehladpur Village', 
-            'Prehladpur School', 'Jain Colony', 'Rohini Sec 35', 'Barwala School', 
-            'Barwala Village', 'Poothkhurd Firni Road', 'Sultan Pur Crossing / Poothkhurd', 
-            'Poothkhurd Village', 'Maharishi Valmiki Hospital', 'DSIDC Office Bawana', 
-            'DSIDC Bawana/ Dhakewala', 'Aditi College Bawana', 'Bawana School', 'Bawana', 
-            'Bawana Depot', 'PS Bawana', 'Dariyapur Kalan School', 'Bajit Pur Crossing', 
+            'Old Delhi Railway Station', 'Novelty Cinema', 'Mori Gate Terminal',
+            'Tees Hazari Court', 'Aruna Asaf Ali Hospital', 'MCD Store (Rajpur Road)',
+            'Rajpur Road Transport Deptt', 'PNB STA Road', 'Exchange Store (Hill Road)',
+            'IP College', 'Old Secretariat (Postal Account Office)', 'Vidhan Sabha Metro Station',
+            'Khyber Pass', 'Mall Road', 'Vishwa Vidyalaya Metro Station', 'INS Hostel',
+            'GTB Nagar', 'New Police Line', 'Alpana Cinema (Model Town Mtr Stn)',
+            'Model Town II', 'Model Town III', 'Azadpur Terminal', 'New Sabzi Mandi Azadpur',
+            'Adarsh Nagar Metro Station', 'Sarai Pipal Thala', 'Jahangirpuri GT Road (Metro Station)',
+            'GTK Depot', 'Shaheed Captain Vikram Batra Flyover', 'Haiderpur Metro Station',
+            'Badli Crossing', 'Jail Road Rohini Sec 18', 'Badli Village', 'Rohini Sec 18 B Block',
+            'Rohini Sec 18', 'Rohini Sec 18 Pocket A', 'Rohini Sec 18 B-7 Road',
+            'Rohini DTC Depot 4', 'Shri Krishna Apartments', 'Rohini Sec-16 Xing',
+            'Delhi Engg College Shahbad', 'Shahbad Daulatpur Gaon', 'Shahbad Daulatpur School',
+            'St. Xavier School Shahbad', 'Shahbad Dairy A Block', 'Shahbad Dairy',
+            'Rohini Sec 27 and 30 Crossing', 'Prehladpur Crossing', 'Prehladpur Village',
+            'Prehladpur School', 'Jain Colony', 'Rohini Sec 35', 'Barwala School',
+            'Barwala Village', 'Poothkhurd Firni Road', 'Sultan Pur Crossing / Poothkhurd',
+            'Poothkhurd Village', 'Maharishi Valmiki Hospital', 'DSIDC Office Bawana',
+            'DSIDC Bawana/ Dhakewala', 'Aditi College Bawana', 'Bawana School', 'Bawana',
+            'Bawana Depot', 'PS Bawana', 'Dariyapur Kalan School', 'Bajit Pur Crossing',
             'Nangal Thakran', 'Bajitpur Village', 'Bajitpur Mandir', 'Katewara Village'
         ],
         distance: 44.7,
@@ -430,18 +430,16 @@ const routes= [
 ];
 
 const data = require('./route.json');
-var asd= routes;
+var asd = routes;
 
-async function load_json(asd){
-
-    for(let i=0;i<asd.length;i++ ){
-        for(let j=0;j<asd[i].route_stops.length;j++ ){
-            asd[i].route_stops[j] = {place:asd[i].route_stops[j],lat:data[asd[i].route_stops[j]].lat,lon:data[asd[i].route_stops[j]].long};
-        } 
+async function load_json(asd) {
+    for (let i = 0; i < asd.length; i++) {
+        for (let j = 0; j < asd[i].route_stops.length; j++) {
+            asd[i].route_stops[j] = { place: asd[i].route_stops[j], lat: data[asd[i].route_stops[j]].lat, lon: data[asd[i].route_stops[j]].long };
+        }
     }
 }
 
 load_json(asd);
-
 
 module.exports = asd;

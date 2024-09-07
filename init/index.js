@@ -58,4 +58,4 @@ async function insertCrews() {
 
 // insertRoutes();
 // insertBuses();
-// insertCrews();
+insertCrews();
