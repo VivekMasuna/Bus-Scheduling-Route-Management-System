@@ -1,3 +1,5 @@
+<% layout('/layouts/boilerplate') %>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,20 +8,30 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     <style>
-        <% layout('/layouts/boilerplate') %>
         body {
             margin: 0;
             padding: 0;
         }
         #map {
-            width: 100%;
+            width: 80%;
             height: 100vh;
+            border-radius: 10px;
+            border: 3px solid black;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
-    <div id="map"></div>
+    <div class="container">
+        <div id="map"></div>
+    </div>
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
     <script>
