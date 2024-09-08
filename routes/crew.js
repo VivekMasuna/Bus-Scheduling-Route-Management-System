@@ -12,10 +12,10 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', wrapAsync(async (req, res, next) => {
     try {
-        const { name, mobile, email, address, role, depotLocation, username, password } = req.body;
+        const { firstName, lastName, mobile, email, address, role, depotLocation, username, password } = req.body;
         
         const newCrew = new Crew({
-            name,
+            name: firstName + lastName,
             mobile,
             email,
             address,

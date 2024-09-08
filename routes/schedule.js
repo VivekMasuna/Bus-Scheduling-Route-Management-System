@@ -7,6 +7,16 @@ const Bus = require('../models/bus.js');
 const Schedule = require('../models/schedule');
 const { scheduleBusAndCrew } = require('../algorithms/schedule.js');
 
+router.get('/activeBusses', wrapAsync(async (req, res) => {
+    try {
+        res.render('schedule/activeBusses.ejs');
+    } catch (error) {
+        console.error(error);
+        req.flash('error', 'Could not fetch active busses');
+        res.redirect('/');
+    }
+}));
+
 router.get('/routes', wrapAsync(async (req, res) => {
     try {
         const routes = await Route.find();
@@ -14,7 +24,7 @@ router.get('/routes', wrapAsync(async (req, res) => {
     } catch (error) {
         console.error(error);
         req.flash('error', 'Could not fetch routes');
-        res.redirect('/admin');
+        res.redirect('/');
     }
 }));
 
