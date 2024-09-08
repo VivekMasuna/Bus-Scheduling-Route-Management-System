@@ -1,72 +1,74 @@
 <% layout('/layouts/boilerplate') %>
+
     <head>
         <link rel="stylesheet" href="/crew_signup.css">
     </head>
+
     <body>
         <div id="wrapper">
-        <form class="form" method="post" action="/crew/signup">
-            <p class="tittle">Register </p>
-            <div class="flex">
-                <label>
-                    <input class="input" type="text" placeholder="" required="">
-                    <span>Firstname</span>
-                </label>
+            <form class="form" method="post" action="/crew/signup">
+                <p class="tittle">Register </p>
+                <div class="flex">
+                    <label>
+                        <input class="input" type="text" placeholder="" required="">
+                        <span>Firstname</span>
+                    </label>
+
+                    <label>
+                        <input class="input" type="text" placeholder="" required="">
+                        <span>Lastname</span>
+                    </label>
+                </div>
 
                 <label>
-                    <input class="input" type="text" placeholder="" required="">
-                    <span>Lastname</span>
+                    <input class="input" type="email" placeholder="" required="">
+                    <span>Email</span>
                 </label>
-            </div>  
-                    
-            <label>
-                <input class="input" type="email" placeholder="" required="">
-                <span>Email</span>
-            </label> 
-            <label>
-                <input class="input" type="text" placeholder="" required>
-                <span>Address</span>
-            </label>
-            <label>
-                <input class="input" type="tel" placeholder="" required>
-                <span>Mobile number</span>
-            </label>
-            <label>
-                <input class="input" type="text" placeholder="" required>
-                <span>Username</span>
-            </label>
-            <label>
-                <select id="role" name="role" required>
-                    <option value="">Select Role</option>
-                    <option value="Driver">Driver</option>
-                    <option value="Conductor">Conductor</option>
-                </select>
-                <span>Role</span>
-            </label>
-            <label>
-                <select id="depotLocation" name="depotLocation" required>
-                    <option value="">Select Location</option>
-                    <option value="Rohini Sec 22 Terminal">Rohini Sec 22 Terminal</option>
-                    <option value="Azadpur Terminal">Azadpur Terminal</option>
-                    <option value="Alipur Village GT Road">Alipur Village GT Road</option>
-                    <option value="Old Delhi Railway Station">Old Delhi Railway Station</option>
-                    <option value="Jharoda Metro Station">Jharoda Metro Station</option>
-                    <option value="Shivaji Stadium Terminal">Shivaji Stadium Terminal</option>
-                    <option value="Qutub Garh Village (T)">Qutub Garh Village (T)</option>
-                    <option value="Bawana Soap Factory">Bawana Soap Factory</option>
-                    <option value="Katewara Village">Katewara Village</option>
-                </select>
-                <span>Depot Location</span>
-            </label>
-            <label>
-                <input class="input" type="password" placeholder="" required="">
-                <span>Password</span>
-            </label>
-            <label>
-                <input class="input" type="password" placeholder="" required="">
-                <span>Confirm password</span>
-            </label>
-            <button class="submit">Submit</button>
-            <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
-        </form>
-    </div>
+                <label>
+                    <input class="input" type="text" placeholder="" required>
+                    <span>Address</span>
+                </label>
+                <label>
+                    <input class="input" type="tel" placeholder="" required>
+                    <span>Mobile number</span>
+                </label>
+                <label>
+                    <input class="input" type="text" placeholder="" required>
+                    <span>Username</span>
+                </label>
+                <label>
+                    <select id="role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="Driver">Driver</option>
+                        <option value="Conductor">Conductor</option>
+                    </select>
+                    <span>Role</span>
+                </label>
+                <label>
+                    <select id="depotLocation" name="depotLocation" required>
+                        <option value="">Select Location</option>
+                        <option value="Rohini Sec 22 Terminal">Rohini Sec 22 Terminal</option>
+                        <option value="Azadpur Terminal">Azadpur Terminal</option>
+                        <option value="Alipur Village GT Road">Alipur Village GT Road</option>
+                        <option value="Old Delhi Railway Station">Old Delhi Railway Station</option>
+                        <option value="Jharoda Metro Station">Jharoda Metro Station</option>
+                        <option value="Shivaji Stadium Terminal">Shivaji Stadium Terminal</option>
+                        <option value="Qutub Garh Village (T)">Qutub Garh Village (T)</option>
+                        <option value="Bawana Soap Factory">Bawana Soap Factory</option>
+                        <option value="Katewara Village">Katewara Village</option>
+                    </select>
+                    <span>Depot Location</span>
+                </label>
+                <label>
+                    <input class="input" type="password" placeholder="" required="">
+                    <span>Password</span>
+                </label>
+                <label>
+                    <input class="input" type="password" placeholder="" required="">
+                    <span>Confirm password</span>
+                </label>
+                <button class="submit">Submit</button>
+                <p class="signin">Already have an acount ? <a href="/crew/login">Signin</a> </p>
+            </form>
+        </div>
     </body>

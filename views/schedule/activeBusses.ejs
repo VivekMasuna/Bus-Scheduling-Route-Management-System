@@ -1,0 +1,71 @@
+<% layout('/layouts/boilerplate') %>
+
+    <style>
+        .activebuses {
+            text-align: center;
+            margin: 1rem 1rem 2rem;
+        }
+
+        .activebuses h2 {
+            color: #ddd;
+            border: 2px solid #002244;
+            background-color: #002244;
+            border-radius: 10px;
+            margin: 10px 100px;
+        }
+
+        .activebuses table {
+            margin: auto;
+        }
+
+        table,
+        th {
+            font-size: 25px;
+            padding: 10px;
+            border-collapse: collapse;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .activebuses button {
+            font-size: 20px;
+            background-color: #FFCC00;
+            border-radius: 20px;
+            padding: 10px;
+            border: 2px solid #c0a744;
+            margin-bottom: 20px;
+            margin-top: 20px;
+
+        }
+
+        .activebuses button a {
+            text-decoration: none;
+
+        }
+    </style>
+
+    <body>
+        <div class="activebuses">
+            <h2>Active Buses</h2>
+            <table>
+                <tr>
+                    <th>Bus No</th>
+                    <th>Route No</th>
+                    <th>Departure</th>
+                    <th>Destination</th>
+                    <th>Time</th>
+                    <th>Alloted Crew</th>
+                    <th>Live Location</th>
+                </tr>
+                <tr>
+                    <th>XYZ</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th><button>View Location</button></th>
+                </tr>
+            </table>
+        </div>
+    </body>
