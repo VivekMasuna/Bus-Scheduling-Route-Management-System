@@ -224,6 +224,11 @@
                 <% availableDrivers.forEach(driver => { %>
                     <li><%= driver.name %> - Depot: <%= driver.depot_location %></li>
                 <% }) %>
+
+                <% if(!availableDrivers.length>0) { %>
+                    <p>No Drivers Available</p>
+                <% } %>
+                
             </ul>
 
             <h3 class="h3">Conductors</h3>
@@ -231,6 +236,10 @@
                 <% availableConductors.forEach(conductor => { %>
                     <li><%= conductor.name %> - Depot: <%= conductor.depot_location %></li>
                 <% }) %>
+                
+                <% if(!availableConductors.length>0) { %>
+                    <p>No Conductors Available</p>
+                <% } %>
             </ul>
 
             <h2>Available Buses</h2>
@@ -238,6 +247,10 @@
                 <% availableBuses.forEach(bus => { %>
                     <li>Bus No: <%= bus.bus_no %> - Depot: <%= bus.current_location %></li>
                 <% }) %>
+
+                <% if(!availableBuses.length>0) { %>
+                    <p>No Buses Available</p>
+                <% } %>
             </ul>
         </div>
         <center>

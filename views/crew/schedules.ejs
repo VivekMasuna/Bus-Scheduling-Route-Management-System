@@ -129,7 +129,7 @@
                         <th>Bus No</th>
                         <th>Route No</th>
                         <th>Origin</th>
-                        <th>Duty</th>
+                        <!-- <th>Duty</th> -->
                         <th>Start Time</th>
                         <th>End Time</th>
                         <th>Status</th>
@@ -148,9 +148,9 @@
                             <td>
                                 <%= schedule.route.origin %>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <%= schedule.duty %>
-                            </td>
+                            </td> -->
                             <td>
                                 <%= moment(schedule.schedule_time.start_time).format('hh:mm A') %>
                             </td>
