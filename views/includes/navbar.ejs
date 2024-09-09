@@ -33,6 +33,10 @@
                 <li><a href="/admin/routes">Schedule a Bus</a></li>
                 <li><a href="/admin/activeBusses">Active Busses</a></li>
             <% } %>
+            <% if(currCrew) { %>
+                <li><a href="/crew/dashboard">Dashboard</a></li>
+                <li><a href="/crew/schedules">Schedules</a></li>
+            <% } %>
         </ul>
         <div class="login-search">
             <% if(!currCrew && !currAdmin) { %>
@@ -64,6 +68,10 @@
                 <a href="/admin/dashboard">Dashboard</a>
                 <a href="/admin/routes">Schedule a Bus</a>
                 <a href="/admin/activeBusses">Active Busses</a>
+            <% } %>
+            <% if(currCrew) { %>
+                <a href="/crew/dashboard">Dashboard</a>
+                <a href="/crew/schedules">Schedules</a>
             <% } %>
             <div class="overlay-login-search">
                 <div class="search-bar">

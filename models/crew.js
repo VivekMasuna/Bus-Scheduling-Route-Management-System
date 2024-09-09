@@ -8,7 +8,7 @@ const CrewSchema = new Schema({
         type: String, 
         unique: true, 
         required: true,
-        sparse: true  // Allow nulls but still enforce uniqueness for non-null values
+        // sparse: true  // Allow nulls but still enforce uniqueness for non-null values
     },
     mobile: {
         type: String,
