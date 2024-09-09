@@ -1,7 +1,13 @@
 const moment = require('moment');
+const mongoose = require('mongoose');
 
 module.exports.scheduleBusAndCrew = async (routeId, startTimeStr, endTimeStr, Route, Crew, Bus, Schedule) => {
     try {
+        if (!mongoose.Types.ObjectId.isValid(routeId)) {
+            console.log(routeId)
+            throw new Error('Invalid Route ID');
+        }
+
         const parseTime = (timeStr) => {
             return moment(timeStr, 'hh:mm A').toDate();
         };

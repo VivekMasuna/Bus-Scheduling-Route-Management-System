@@ -207,7 +207,7 @@
                             <td><%= schedule.end_time %></td>
                             <td>
                                 <form action="/admin/schedule" method="POST">
-                                    <input type="hidden" name="route_id" value="<%= route._id %>">
+                                    <input type="hidden" name="route_id" value="<%= route[0]._id %>">
                                     <input type="hidden" name="start_time" value="<%= schedule.start_time %>">
                                     <input type="hidden" name="end_time" value="<%= schedule.end_time %>">
                                     <button type="submit" class="schedule-btn">Schedule</button>
