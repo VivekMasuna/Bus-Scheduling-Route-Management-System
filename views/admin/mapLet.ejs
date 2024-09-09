@@ -43,33 +43,33 @@
         // Coordinates data from the server
         var coord = <%- JSON.stringify(coord) %>; // Embed coord data into JavaScript
         var stops = new Array(); // Embed stops count into JavaScript
-
+		var icon_ = (iconColor,size) => `<div style="background-color: ${iconColor}; width: ${size}px; height: ${size}px; border-radius: 50%; border: 2px solid white;"></div>`;
+        var mark;
         // Add markers based on coord data
 		for(let i=0;i<coord.length;i++){
 				
 			if(i==0){
 				iconColor = 'red';
-				var divIcon = `<div style="background-color: ${iconColor}; width: 30px; height: 30px; border-radius: 50%; border: 2px solid white;"></div>`;
-				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [30, 30] }) },{draggable:false})
+				mark = L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: icon_(iconColor,30), iconSize: [30, 30] }), draggable:false })
                 .bindPopup(`<b>Stop  ${i+1}: ${coord[i].place}</b><br>Latitude: ${coord[i].lat}<br>Longitude: ${coord[i].lon}`)
                 .addTo(map);
 			}
 
 			else if(i==coord.length-1){
 				iconColor = 'green';
-				var divIcon = `<div style="background-color: ${iconColor}; width: 30px; height: 30px; border-radius: 50%; border: 2px solid white;"></div>`;
-				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [30, 30] }) },{draggable:false})
+				mark = L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: icon_(iconColor,30), iconSize: [30, 30] }), draggable:false })
                 .bindPopup(`<b>Stop ${i+1}: ${coord[i].place}</b><br>Latitude: ${coord[i].lat}<br>Longitude: ${coord[i].lon}`)
                 .addTo(map);
 			}
 
 			else{
 				iconColor = 'grey';
-				var divIcon = `<div style="background-color: ${iconColor}; width: 15px; height: 15px; border-radius: 50%; border: 2px solid white;"></div>`;
-				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [15, 15] }) },{draggable:false})
+				mark = L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: icon_(iconColor,15), iconSize: [15, 15] }), draggable:false })
                 .bindPopup(`<b>Stop ${i+1}: ${coord[i].place}</b><br>Latitude: ${coord[i].lat}<br>Longitude: ${coord[i].lon}`)
                 .addTo(map);
 			}
+
+            mark.dragging.disable();
 
 			stops.push([coord[i].lat, coord[i].lon]);
 			
