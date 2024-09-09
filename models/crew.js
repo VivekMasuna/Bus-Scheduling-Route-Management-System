@@ -4,6 +4,12 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const CrewSchema = new Schema({
     name: { type: String, required: true },
+    username: { 
+        type: String, 
+        unique: true, 
+        required: true,
+        sparse: true  // Allow nulls but still enforce uniqueness for non-null values
+    },
     mobile: {
         type: String,
         required: true,
@@ -28,7 +34,7 @@ const CrewSchema = new Schema({
     role: { type: String, enum: ['Driver', 'Conductor'], required: true },
     depot_location: { type: String, required: true },  // Origin depot name
     is_active: { type: Boolean, default: false },
-    on_duty: { type: Boolean, default: false },
+    on_duty: { type: Boolean, default: true },
     duty_start_times: [{ type: Date }],
     duty_end_times: [{ type: Date }],
     rest_period: { type: Boolean, default: false },

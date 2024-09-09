@@ -18,10 +18,14 @@ function generateMobile(i) {
 const crews = [];
 
 for (let i = 0; i < 50; i++) {
+    const driverUsername = `driver${i + 1}`;
+    const conductorUsername = `conductor${i + 1}`;
+
     crews.push({
         name: `Driver ${i + 1}`,
+        username: driverUsername,
         mobile: generateMobile(i),
-        email: `driver${i + 1}@example.com`,
+        email: `${driverUsername}@example.com`,
         address: `Address ${i + 1}`,
         role: 'Driver',
         depot_location: locations[Math.floor(Math.random() * locations.length)],
@@ -34,8 +38,9 @@ for (let i = 0; i < 50; i++) {
 
     crews.push({
         name: `Conductor ${i + 1}`,
+        username: conductorUsername,
         mobile: generateMobile(i + 50),
-        email: `conductor${i + 1}@example.com`,
+        email: `${conductorUsername}@example.com`,
         address: `Address ${i + 51}`,
         role: 'Conductor',
         depot_location: locations[Math.floor(Math.random() * locations.length)],

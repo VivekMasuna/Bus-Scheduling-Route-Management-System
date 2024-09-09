@@ -84,7 +84,6 @@ router.post('/request', wrapAsync(async (req, res) => {
     try {
         const { username, email, password } = req.body;
         const newAdminRequest = new AdminRequest({ username, email, password });
-
         const superAdmin = await Admin.findOne({ isSuperAdmin: true });
         if (superAdmin) {
             const mailOptions = {
