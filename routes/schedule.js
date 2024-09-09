@@ -30,13 +30,15 @@ router.get('/routes', wrapAsync(async (req, res) => {
 
 router.post('/schedule', wrapAsync(async (req, res) => {
     const { route_id, start_time, end_time } = req.body;
-
+    console.log("------------------------------------")
+    console.log(route_id)
+    console.log("------------------------------------")
     try {
         await scheduleBusAndCrew(route_id, start_time, end_time, Route, Crew, Bus, Schedule);
         req.flash('success', 'Bus and crew successfully scheduled!');
         res.redirect('/admin/schedules');
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         req.flash('error', error.message);
         res.redirect('/admin/routes');
     }
@@ -61,8 +63,8 @@ router.get('/schedules', wrapAsync(async (req, res) => {
 router.get('/routes/timing/:id', wrapAsync(async (req, res) => {
     const { id } = req.params;
     try {
-        const route = await Route.find({route_no:id});
-
+        const route = await Route.find({route_no: id});
+        
         if (route.length!=1) {
             req.flash('error', 'Route not found');
             return res.redirect('/admin/routes');
