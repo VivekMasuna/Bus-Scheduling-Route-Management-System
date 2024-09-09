@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 // const { generateVerificationCode, sendVerificationEmail } = require('../functions.js');
 const Crew = require("../models/crew.js");
+const Schedule = require("../models/schedule.js");
 const { saveRedirectUrl } = require('../middleware.js');
 const passport = require('passport');
 const wrapAsync = require('../utils/wrapAsync.js');
+const moment = require('moment');
 
 router.get('/signup', (req, res) => {
     res.render("crew/signup.ejs");
@@ -72,6 +74,34 @@ router.get("/logout", (req, res, next) => {
         req.flash("success", "You are logged out!");
         res.redirect("/");
     });
+});
+
+router.get('/dashboard', async (req, res) => {
+    try {
+        const crew = await Crew.findById(req.user._id);
+        res.render('crew/dashboard', { crew });
+    } catch (err) {
+        req.flash("error", err.message);
+        res.redirect('/');
+    }
+});
+
+router.get('/schedules', async (req, res) => {
+    try {
+        const crewId = req.crew._id; 
+
+        const schedules = await Schedule.find({
+            $or: [
+                { driver: crewId },
+                { conductor: crewId }
+            ]
+        }).populate('bus driver conductor route');
+
+        res.render('crew/schedules.ejs', { schedules, moment });
+    } catch (error) {
+        req.flash("error", error.message);
+        res.redirect('/');
+    }
 });
 
 module.exports = router;

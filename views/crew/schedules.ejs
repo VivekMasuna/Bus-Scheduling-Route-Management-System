@@ -1,0 +1,171 @@
+<% layout('/layouts/boilerplate') %>
+
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .schedule-table th {
+            background-color: #003366;
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .schedule-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .schedule-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .schedule-table tbody tr:hover {
+            background-color: #FFCC00;
+        }
+
+        .schedule-table td {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .status {
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: black;
+            font-weight: 400;
+        }
+
+        .status.on-time {
+            background-color: #28a745;
+        }
+
+        .status.late {
+            background-color: #dc3545;
+        }
+
+        .status.pending {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .action-btn {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background-color: #FFCC00;
+            color: #003366;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+
+            .schedule-table th,
+            .schedule-table td {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .schedule-table th,
+            .schedule-table td {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .action-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="dashboard-container">
+            <h1>Crew Duty Schedule</h1>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Bus No</th>
+                        <th>Route No</th>
+                        <th>Origin</th>
+                        <th>Duty</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% schedules.forEach(schedule=> { %>
+                        <tr>
+                            <td>
+                                <%= schedule.bus.bus_no %>
+                            </td>
+                            <td>
+                                <%= schedule.route.route_no %>
+                            </td>
+                            <td>
+                                <%= schedule.route.origin %>
+                            </td>
+                            <td>
+                                <%= schedule.duty %>
+                            </td>
+                            <td>
+                                <%= moment(schedule.schedule_time.start_time).format('hh:mm A') %>
+                            </td>
+                            <td>
+                                <%= moment(schedule.schedule_time.end_time).format('hh:mm A') %>
+                            </td>
+                            <td>
+                                <span class="status <%= schedule.status.toLowerCase() %>">
+                                    <%= schedule.status %>
+                                </span>
+                            </td>
+                            <td><a href="/schedule/<%= schedule._id %>" class="action-btn">View Details</a></td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </body>

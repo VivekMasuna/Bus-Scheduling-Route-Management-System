@@ -30,9 +30,6 @@ router.get('/routes', wrapAsync(async (req, res) => {
 
 router.post('/schedule', wrapAsync(async (req, res) => {
     const { route_id, start_time, end_time } = req.body;
-    console.log("------------------------------------")
-    console.log(route_id)
-    console.log("------------------------------------")
     try {
         await scheduleBusAndCrew(route_id, start_time, end_time, Route, Crew, Bus, Schedule);
         req.flash('success', 'Bus and crew successfully scheduled!');

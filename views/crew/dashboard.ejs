@@ -1,0 +1,157 @@
+<% layout('/layouts/boilerplate') %>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Left Section: Personal Details */
+    .personal-details {
+        width: 45%;
+        background-color: #003366;
+        color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .personal-details img {
+        border-radius: 50%;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 5px solid #FFCC00;
+    }
+
+    .personal-details h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .personal-details p {
+        margin: 10px 0;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Right Section: Radio Buttons and Notifications */
+    .right-section {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .radio-buttons {
+        background-color: #003366;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+
+    .radio-buttons label {
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .radio-buttons input {
+        margin-right: 10px;
+        transform: scale(1.2);
+    }
+
+    /* Notifications Section */
+    .notifications {
+        background-color: #FFCC00;
+        padding: 20px;
+        border-radius: 15px;
+        color: #003366;
+        font-weight: bold;
+        height: 250px;
+        overflow-y: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .notifications h3 {
+        margin-top: 0;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .notifications p {
+        margin: 10px 0;
+        font-size: 16px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .personal-details,
+        .right-section {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .notifications {
+            height: 200px;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <!-- Personal Details Section -->
+        <div class="personal-details">
+            <img src="/<%= crew.photo || 'default-avatar.jpg' %>" alt="User Photo">
+            <h2><%= crew.name %></h2>
+            <p><strong>Mobile:</strong> <%= crew.mobile %></p>
+            <p><strong>Address:</strong> <%= crew.address %></p>
+            <p><strong>Role:</strong> <%= crew.role %></p>
+        </div>
+
+        <!-- Right Section: Radio Buttons and Notifications -->
+        <div class="right-section">
+            <!-- Radio Buttons -->
+            <div class="radio-buttons">
+                <label>
+                    <input type="radio" name="status" value="on-duty" <%= crew.on_duty ? 'checked' : '' %>> On Duty
+                </label>
+                <label>
+                    <input type="radio" name="status" value="rest" <%= crew.rest_period ? 'checked' : '' %>> Take a Rest
+                </label>
+            </div>
+
+            <!-- Notifications Section -->
+            <div class="notifications">
+                <h3>Live Notifications</h3>
+                <% crew.notifications.forEach(notification => { %>
+                    <p><%= notification.message %></p>
+                <% }) %>
+                <% if (crew.notifications.length === 0) { %>
+                    <p>No new notifications.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
