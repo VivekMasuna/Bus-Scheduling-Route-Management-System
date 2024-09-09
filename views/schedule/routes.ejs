@@ -107,12 +107,12 @@
                 </thead>
                 <tbody>
                     <% routes.forEach(route => { %>
-                        <tr class="route" onclick="window.location.href='/admin/routes/timing/<%= route._id %>'">
+                        <tr class="route" onclick="window.location.href='/admin/routes/timing/<%= route.route_no %>'">
                             <td><%= route.route_no %></td>
                             <td><%= route.origin %></td>
                             <td><%= route.destination %></td>
                             <td>
-                                <a href="#" class="btn" onclick="event.stopPropagation();">
+                                <a href="/admin/routes/stops/<%= route.route_no %>" class="btn" onclick="event.stopPropagation();">
                                     View
                                 </a>
                             </td>

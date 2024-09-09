@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const wrapAsync = require('../utils/wrapAsync.js');
-const Route = require('../models/route');
-const Crew = require('../models/crew');
-const Bus = require('../models/bus');
+const Route = require('../models/route.js');
+const Crew = require('../models/crew.js');
+const Bus = require('../models/bus.js');
 const Schedule = require('../models/schedule');
 const { scheduleBusAndCrew } = require('../algorithms/schedule.js');
 
@@ -61,8 +61,9 @@ router.get('/schedules', wrapAsync(async (req, res) => {
 router.get('/routes/timing/:id', wrapAsync(async (req, res) => {
     const { id } = req.params;
     try {
-        const route = await Route.findById(id);
-        if (!route) {
+        const route = await Route.find({route_no:id});
+
+        if (route.length!=1) {
             req.flash('error', 'Route not found');
             return res.redirect('/admin/routes');
         }
@@ -85,6 +86,40 @@ router.get('/routes/timing/:id', wrapAsync(async (req, res) => {
         });
 
         res.render('schedule/timings.ejs', { route, availableDrivers, availableConductors, availableBuses });
+    } catch (err) {
+        console.log(err);
+        res.status(500).send('Server Error');
+    }
+}));
+
+router.get('/routes/stops/:id', wrapAsync(async (req, res) => {
+    const { id } = req.params;
+    try {
+        const route = await Route.find({route_no:id});
+
+        if (route.length!=1) {
+            req.flash('error', 'Route not found');
+            return res.redirect('/admin/routes');
+        }
+
+        res.render('schedule/stops.ejs', { route });
+    } catch (err) {
+        console.log(err);
+        res.status(500).send('Server Error');
+    }
+}));
+
+router.post('/routes/stops/edit', wrapAsync(async (req, res) => {
+    const { route_no, lat, lon } = req.params;
+    try {
+        const route = await Route.find({route_no:route_no});
+
+        if (route.length!=1) {
+            req.flash('error', 'Route not found');
+            return res.redirect('/admin/routes');
+        }
+
+        res.render('schedule/stops.ejs', { route });
     } catch (err) {
         console.log(err);
         res.status(500).send('Server Error');

@@ -191,59 +191,31 @@
         </div>
 
         <div class="container">
-            <h2>Timings</h2>
+            <h2>Stops</h2>
             <table class="timings-table">
                 <thead>
                     <tr>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                        <th>Schedule</th>
+                        <th>Stop No.</th>
+                        <th>Stop Name</th>
+                        <th>Coordinates</th>
+                        <th>Edit Details</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% route[0].schedule.forEach((schedule) => { %>
+                    <% for(let i=0;i<route[0].route_stops.length;i++) { %>
                         <tr>
-                            <td><%= schedule.start_time %></td>
-                            <td><%= schedule.end_time %></td>
+                            <td><%= i+1 %></td>
+                            <td><%= route[0].route_stops[i].place %></td>
+                            <td>Lat: <%= route[0].route_stops[i].lat %>, Long: <%= route[0].route_stops[i].lon %></td>
                             <td>
-                                <form action="/admin/schedule" method="POST">
-                                    <input type="hidden" name="route_id" value="<%= route._id %>">
-                                    <input type="hidden" name="start_time" value="<%= schedule.start_time %>">
-                                    <input type="hidden" name="end_time" value="<%= schedule.end_time %>">
-                                    <button type="submit" class="schedule-btn">Schedule</button>
-                                </form>
+                                <a href="/admin/stops/edit/<%= route.route_no %>" class="btn" onclick="event.stopPropagation();">
+                                    Edit Info
+                                </a>
                             </td>
                         </tr>
-                    <% }) %>
+                    <% } %>
                 </tbody>
             </table>
 
-            <h2>Available Crew</h2>
-            <h3 class="h3">Drivers</h3>
-            <ul>
-                <% availableDrivers.forEach(driver => { %>
-                    <li><%= driver.name %> - Depot: <%= driver.depot_location %></li>
-                <% }) %>
-            </ul>
-
-            <h3 class="h3">Conductors</h3>
-            <ul>
-                <% availableConductors.forEach(conductor => { %>
-                    <li><%= conductor.name %> - Depot: <%= conductor.depot_location %></li>
-                <% }) %>
-            </ul>
-
-            <h2>Available Buses</h2>
-            <ul>
-                <% availableBuses.forEach(bus => { %>
-                    <li>Bus No: <%= bus.bus_no %> - Depot: <%= bus.current_location %></li>
-                <% }) %>
-            </ul>
         </div>
-        <center>
-            <div class="buttons">
-                <button class="button1"><a href="/admin/routes/timing/new">Add new Timing</a></button>
-                <button class="button1"><a href="/">Delete a Timing</a></button>
-            </div>
-        </center>
     </body>

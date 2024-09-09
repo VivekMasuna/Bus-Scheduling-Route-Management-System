@@ -64,7 +64,9 @@
 			}
 
 			else{
-				L.marker([coord[i].lat, coord[i].lon],{draggable:false})
+				iconColor = 'grey';
+				var divIcon = `<div style="background-color: ${iconColor}; width: 15px; height: 15px; border-radius: 50%; border: 2px solid white;"></div>`;
+				L.marker([coord[i].lat, coord[i].lon], { icon: L.divIcon({ className: 'custom-icon', html: divIcon, iconSize: [15, 15] }) },{draggable:false})
                 .bindPopup(`<b>Stop ${i+1}: ${coord[i].place}</b><br>Latitude: ${coord[i].lat}<br>Longitude: ${coord[i].lon}`)
                 .addTo(map);
 			}
