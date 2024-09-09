@@ -72,19 +72,19 @@ router.get('/routes/timing/:id', wrapAsync(async (req, res) => {
             role: 'Driver',
             is_active: false,
             on_duty: true,
-            depot_location: route.origin
+            depot_location: route[0].origin
         });
         const availableConductors = await Crew.find({
             role: 'Conductor',
             is_active: false,
             on_duty: true,
-            depot_location: route.origin
+            depot_location: route[0].origin
         });
         const availableBuses = await Bus.find({
             active: false,
-            current_location: route.origin
+            current_location: route[0].origin
         });
-
+        console.log(route,availableBuses,availableConductors,availableDrivers);
         res.render('schedule/timings.ejs', { route, availableDrivers, availableConductors, availableBuses });
     } catch (err) {
         console.log(err);
